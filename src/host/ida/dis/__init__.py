@@ -18,7 +18,7 @@ def disassembler_for_arch(arch_name=None):
     print 'Architecture: 64-bit intel.'
     return (ir.IR_INTEL_x64, ir.intel.ir_intel_x64, intel.disassembler)
 
-  raise RuntimeError("Don't know which arch to choose for %s" % (repr(filetype), ))
+  raise RuntimeError("Don't know which arch to choose for %s" % (repr(arch_name), ))
 
 def create(arch_name=None):
   """ Find the correct disassembler module for this host.
