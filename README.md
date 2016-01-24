@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/EiNSTeiN-/decompiler.svg)](https://travis-ci.org/EiNSTeiN-/decompiler)
+[![Build Status](https://travis-ci.org/Maroc-OS/decompiler.svg)](https://travis-ci.org/Maroc-OS/decompiler)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/6066dcab6432437f9a360b0663deeae8)](https://www.codacy.com/app/merruk-company/decompiler)
 [![Code Climate](https://codeclimate.com/github/EiNSTeiN-/decompiler/badges/gpa.svg)](https://codeclimate.com/github/EiNSTeiN-/decompiler)
 ==============
