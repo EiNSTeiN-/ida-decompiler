@@ -1,5 +1,5 @@
-[![Build Status](https://api.travis-ci.org/EiNSTeiN-/decompiler.svg)](https://api.travis-ci.org/Maroc-OS/decompiler)
-[![Code Climate](https://codeclimate.com/github/EiNSTeiN-/decompiler/badges/gpa.svg)](https://codeclimate.com/github/Maroc-OS/decompiler)
+[![Build Status](https://api.travis-ci.org/EiNSTeiN-/decompiler.svg)](https://api.travis-ci.org/EiNSTeiN-/decompiler)
+[![Code Climate](https://codeclimate.com/github/EiNSTeiN-/decompiler/badges/gpa.svg)](https://codeclimate.com/github/EiNSTeiN-/decompiler)
 ==============
 
 A multi-backends decompiler written in python. It currently supports IDA and Capstone.
