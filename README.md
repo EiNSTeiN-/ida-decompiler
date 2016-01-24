@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/EiNSTeiN-/decompiler.svg)](https://api.travis-ci.org/EiNSTeiN-/decompiler)
+[![Build Status](https://travis-ci.org/EiNSTeiN-/decompiler.svg)](https://travis-ci.org/EiNSTeiN-/decompiler)
 [![Code Climate](https://codeclimate.com/github/EiNSTeiN-/decompiler/badges/gpa.svg)](https://codeclimate.com/github/EiNSTeiN-/decompiler)
 ==============
 
