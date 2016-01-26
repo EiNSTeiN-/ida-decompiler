@@ -315,53 +315,25 @@ class tokenizer(object):
         yield tok
       return
 
+    if obj is None:
+      yield token_keyword('None')
+      return
+
     if type(obj) == sign_t:
-      yield token_keyword('SIGN')
-      l, r = self.matching('(', ')')
-      yield l
-      for tok in self.expression_tokens(obj.op):
-        yield tok
-      yield r
+      obj_type = 'SIGN'
+    elif type(obj) == overflow_t:
+      obj_type = 'OVERFLOW'
+    elif type(obj) == parity_t:
+      obj_type = 'PARITY'
+    elif type(obj) == adjust_t:
+      obj_type = 'ADJUST'
+    elif type(obj) == carry_t:
+      obj_type = 'CARRY'
+    elif type(obj) == phi_t:
+      obj_type = 'Φ'
       return
 
-    if type(obj) == overflow_t:
-      yield token_keyword('OVERFLOW')
-      l, r = self.matching('(', ')')
-      yield l
-      for tok in self.expression_tokens(obj.op):
-        yield tok
-      yield r
-      return
-
-    if type(obj) == parity_t:
-      yield token_keyword('PARITY')
-      l, r = self.matching('(', ')')
-      yield l
-      for tok in self.expression_tokens(obj.op):
-        yield tok
-      yield r
-      return
-
-    if type(obj) == adjust_t:
-      yield token_keyword('ADJUST')
-      l, r = self.matching('(', ')')
-      yield l
-      for tok in self.expression_tokens(obj.op):
-        yield tok
-      yield r
-      return
-
-    if type(obj) == carry_t:
-      yield token_keyword('CARRY')
-      l, r = self.matching('(', ')')
-      yield l
-      for tok in self.expression_tokens(obj.op):
-        yield tok
-      yield r
-      return
-
-    if type(obj) == phi_t:
-      yield token_keyword('Φ')
+    if type(obj) == phi_t or obj_type == 'Φ':
       l, r = self.matching('(', ')')
       yield l
       for op in obj.operands:
@@ -371,9 +343,13 @@ class tokenizer(object):
         yield token_character(' ')
       yield r
       return
-
-    if obj is None:
-      yield token_keyword('None')
+    else:
+      yield token_keyword(obj_type)
+      l, r = self.matching('(', ')')
+      yield l
+      for tok in self.expression_tokens(obj.op):
+        yield tok
+      yield r
       return
 
     raise ValueError('cannot display object of type %s' % (obj.__class__.__name__, ))
