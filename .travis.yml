@@ -1,6 +1,11 @@
 sudo: false
 language: python
 python:
-  - "2.7"
-install: "pip install -r requirements.txt"
+- '2.7'
+install: pip install -r requirements.txt
 script: python tests/run.py
+
+addons:
+    code_climate:
+        repo_token:
+            secure: "ehr0JgLCt81b9ST4sj2eeStCHpUu119ZUi6jVELxgRwwMok8KHxSDjAE3JMX50AFYOU7zzfZECH8ZKICeDZE1vKjLI0CN7f6wv/4MNVoO50cpAlC4sjVNpxkWjf5DJwqQgkQ+R/Pe3pSoDRt4CY2DKFj0Mow4HwzjPIQGqiYNirr0UQh+aK4RSidYwHynssClMOjIgYIHwLikmMSEf/f8odJmlBQrebR2qDG0mTAGRVOgUziSizaoNSYrnLSFL1v5QJSihfa6AOPv6Zh+oRcq0r8MpEw6XVgSRB21zqRhVlXnGVSOn5Nzynbi4MalBjhT/TzJ0cDiTGLMuNvEtaGEjTbGWksXciI/Fd4LWKni5W/GNyOFaq5/d+3JYGSM7ncQKLZf9BOeAKiUuyl5A+/69AmDylSYMa+DPaNyllV2GOoiUoin8weyG4eHUthAgF4/bSzXjv8VCViRWaAqROXqhf6raJkEjt3G2eHPlv8KjPFrcQk8Oa9yu/GZJHh01w1ZBT9RgDutD2PunR7W4TlD7LZ8msEY6smtQfgagrV9rC35Mn9jwmyIFVA68dxJIPdkPIIDKmYlAJgj6hlLg2Kb5pOrd/S2f8jiqeUSahwBpetxy0OhqNgqO7pS8GXhxcxtmYOzZ6rWF0W+9M7QwV7RnZPEmVX1WbnOn2Wcx2R3kk="
