@@ -120,7 +120,7 @@ class tokenizer(object):
     self.function = function
     self.arch = function.arch
     self.indent = indent
-    self.display_labels = self.display_labels()
+    self.show_labels = self.display_labels()
     self.done_labels = None
     return
 
@@ -357,7 +357,7 @@ class tokenizer(object):
   def statement_tokens(self, obj, indent=0):
 
     if isinstance(obj, statement_t) and obj.ea is not None:
-      if obj.ea in self.display_labels and obj.ea not in self.done_labels:
+      if obj.ea in self.show_labels and obj.ea not in self.done_labels:
         yield token_global('loc_%x' % (obj.ea, ))
         yield token_character(':')
         yield token_character('\n')
