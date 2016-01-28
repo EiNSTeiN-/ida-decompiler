@@ -11,6 +11,8 @@ engines:
     enabled: true
       config:
         python_version: 2
+  pep8:
+    enabled: true
 ratings:
   paths:
   - "**.py"
