@@ -290,7 +290,7 @@ class decompiler_t(object):
     step_locals_renamed,
     step_ssa_removed,
     step_combined,
-    step_decompiled,
+    step_decompiled
   ]
 
   def __init__(self, disasm, ea):

@@ -19,8 +19,7 @@ import host.dis
 try:
   import capstone
 except ImportError as e:
-  print 'warning: Capstone tests are unavailable'
-  pass
+  print('Capstone tests are unavailable\n\warning: %s' % e)
 
 class callconv(object):
   def __init__(self, callconv):

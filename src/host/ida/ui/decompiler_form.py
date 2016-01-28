@@ -31,7 +31,7 @@ decompilation_phase = [
   'Locations renamed',
   'Expressions propagated',
   'Dead code pruned',
-  'Decompiled',
+  'Decompiled'
 ]
 
 class DecompilerForm(idaapi.PluginForm):
@@ -90,8 +90,8 @@ class DecompilerForm(idaapi.PluginForm):
     dis = host.dis.available_disassemblers['ida'].create()
     d = decompiler.decompiler_t(dis, self.ea)
 
-    for step in d.STEPS():
-      print 'Decompiler step: %u - %s' % (step, decompilation_phase[step])
+    for step in d.steps():
+      #~ print 'Decompiler step: %u - %s' % (step, decompilation_phase[step]) # this print is not treated correctelly.
       if step >= wanted_step:
         break
 
