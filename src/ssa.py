@@ -705,7 +705,7 @@ class ssa_back_transformer_t(object):
     else:
       print 'more than one group'
       print '   ', repr(groups)
-      raise 'not implemented'
+      raise NotImplementedError('not implemented.')
 
     return
 

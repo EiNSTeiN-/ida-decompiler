@@ -2,8 +2,13 @@ import idautils
 import idaapi
 import idc
 
+import host
+import host.dis
+import host.ui
+
 import sys
 
+import renamer
 from decompiler import *
 
 class GraphViewer(idaapi.GraphViewer):
