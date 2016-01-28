@@ -13,15 +13,15 @@ class ir_base(object):
 
   def is_return(self, ea):
     """ return True if this is a return instruction. """
-    raise NotImplemented('base class must override this method')
+    raise NotImplementedError('base class must override this method')
 
   def has_jump(self, ea):
     """ return true if this instruction is a jump """
-    raise NotImplemented('base class must override this method')
+    raise NotImplementedError('base class must override this method')
 
   def next_instruction_ea(self, ea):
     """ return the address of the next instruction. """
-    raise NotImplemented('base class must override this method')
+    raise NotImplementedError('base class must override this method')
 
   def jump_branches(self, ea):
     """ if this instruction is a jump, yield the destination(s)
@@ -30,12 +30,12 @@ class ir_base(object):
         note that the destination expression is usually a value_t
         representing an address within the function, however it may
         be any other operand type such as a register. """
-    raise NotImplemented('base class must override this method')
+    raise NotImplementedError('base class must override this method')
 
   def generate_statements(self, ea):
     """ this is where the magic happens, this method yeilds one or more new
     statement corresponding to the given location. """
-    raise NotImplemented('base class must override this method')
+    raise NotImplementedError('base class must override this method')
 
 
   ## following functions are typically implemented at the host level. they are used mostly to

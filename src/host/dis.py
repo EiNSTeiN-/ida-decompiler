@@ -23,7 +23,6 @@ try:
 except ImportError as e:
   print repr(e)
   traceback.print_exc()
-  pass
 except BaseException as e:
   print repr(e)
   traceback.print_exc()

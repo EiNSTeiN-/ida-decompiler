@@ -31,7 +31,7 @@ decompilation_phase = [
   'Locations renamed',
   'Expressions propagated',
   'Dead code pruned',
-  'Decompiled',
+  'Decompiled'
 ]
 
 class DecompilerForm(idaapi.PluginForm):
@@ -69,7 +69,9 @@ class DecompilerForm(idaapi.PluginForm):
     for phase in decompilation_phase:
       self.phase_selection.addItem(phase)
 
-    self.phase_selection.setCurrentIndex(decompiler.STEP_DECOMPILED)
+    # case sensitive for step_decompiled and setCurrentIndex argument should be integer,
+    # so why not just (0)???
+    self.phase_selection.setCurrentIndex(0)
     self.phase_selection.currentIndexChanged.connect(self.phase_selected)
 
     self.parent.setLayout(layout)
@@ -80,13 +82,16 @@ class DecompilerForm(idaapi.PluginForm):
     self.decompile(index)
     return
 
-  def decompile(self, wanted_step=decompiler.STEP_DECOMPILED):
+  def decompile(self, wanted_step=None):
+
+    if not wanted_step:
+      wanted_step = decompiler.step_decompiled
 
     dis = host.dis.available_disassemblers['ida'].create()
     d = decompiler.decompiler_t(dis, self.ea)
 
     for step in d.steps():
-      print 'Decompiler step: %u - %s' % (step, decompilation_phase[step])
+      #~ print 'Decompiler step: %u - %s' % (step, decompilation_phase[step]) # this print is not treated correctelly.
       if step >= wanted_step:
         break
 

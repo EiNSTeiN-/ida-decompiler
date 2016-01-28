@@ -106,7 +106,6 @@ class disassembler(object):
       expr = value_t(op.imm, op.size*8)
     else:
       raise RuntimeError('%x: unhandled operand type: %s' % (ea, repr(op.type)))
-      return
 
     return expr
 
