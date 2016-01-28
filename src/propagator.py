@@ -11,7 +11,6 @@ class propagator_t(object):
   def is_assignment(self, stmt):
     return isinstance(stmt.expr, assign_t) and \
         isinstance(stmt.expr.op1, assignable_t)
-    return False
 
   def replace(self, defn, value, use):
     new = value.copy(with_definition=True)

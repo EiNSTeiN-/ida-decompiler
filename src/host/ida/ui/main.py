@@ -31,15 +31,15 @@ def main():
   try:
     hotkey_ctx
     if idaapi.del_hotkey(hotkey_ctx):
-      print("Hotkey unregistered!")
+      print "Hotkey unregistered!"
       del hotkey_ctx
     else:
-      print("Failed to delete hotkey!")
+      print "Failed to delete hotkey!"
   except:
       pass
   hotkey_ctx = idaapi.add_hotkey("F5", show_decompiler)
   if hotkey_ctx is None:
-    print("Failed to register hotkey!")
+    print "Failed to register hotkey!"
     del hotkey_ctx
   else:
-    print("Press F5 to decompile a function.")
+    print "Press F5 to decompile a function."
