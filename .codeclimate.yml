@@ -9,8 +9,8 @@ engines:
     enabled: true
   radon:
     enabled: true
-      config:
-        python_version: 2
+    config:
+      python_version: 2
   pep8:
     enabled: true
 ratings:
